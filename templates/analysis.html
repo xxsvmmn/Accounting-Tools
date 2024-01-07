@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>支出分析</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 50px;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        p {
+            text-align: center;
+            margin-top: 20px;
+            color: #000; 
+            font-size: 24px; 
+        }
+        .text-center {
+            text-align: center;
+        }
+        img {
+            display: block;
+            max-width: 80%;
+            margin: 30px auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<h1>總覽</h1>
+
+<p>總花費: ${{ total_expenses }}</p>
+
+{% if img_base64 %}
+<h2 class="text-center">支出分析:</h2>
+<img src="data:image/png;base64,{{ img_base64 }}" alt="支出分布圖">
+{% endif %}
+
+<p><a href="{{ url_for('home') }}">回到首頁</a></p>
+
+</body>
+</html>

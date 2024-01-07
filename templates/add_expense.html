@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>紀錄您的支出</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 50px;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        form {
+            max-width: 400px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="date"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        p {
+            text-align: center;
+            margin-top: 20px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<h1>紀錄您的支出</h1>
+
+<form action="{{ url_for('add_expense') }}" method="post">
+    <label for="date">日期:</label>
+    <input type="date" id="date" name="date" required>
+
+    <label for="category">類別:</label>
+    <input type="text" id="category" name="category" required>
+
+    <label for="description">名稱:</label>
+    <input type="text" id="description" name="description" required>
+
+    <label for="amount">金額:</label>
+    <input type="number" id="amount" name="amount" step="0.01" required>
+
+    <input type="submit" value="加入">
+</form>
+
+<p><a href="{{ url_for('home') }}">回到首頁</a></p>
+
+</body>
+</html>
+
