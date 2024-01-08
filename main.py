@@ -4,8 +4,6 @@ from datetime import datetime
 from analysis_module import calculate_total_expenses
 import clear_expense as clr
 from chart_generator import generate_pie_chart
-import matplotlib
-matplotlib.use('Agg')
 
 app = Flask(__name__)
 
